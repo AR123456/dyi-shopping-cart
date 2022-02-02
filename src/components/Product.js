@@ -2,9 +2,15 @@ import React from "react";
 
 const Product = (props) => {
   return (
-    <div>
+    <>
+      <img src="" alt="" className="small" />
+      <h3>Product name</h3>
+      <div>Product price </div>
+      <div>
+        <button>Add to cart </button>
+      </div>
       <h2>Product Page </h2>
-    </div>
+    </>
   );
 };
 

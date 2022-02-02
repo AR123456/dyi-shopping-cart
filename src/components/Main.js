@@ -2,9 +2,11 @@ import React from "react";
 
 const Main = (props) => {
   return (
-    <div>
-      <h2>The main page</h2>
-    </div>
+    <>
+      <main className="block col-2"></main>
+      <h2>Here are the products</h2>
+      <div className="row">Showing products here</div>
+    </>
   );
 };
 
