@@ -14,7 +14,6 @@ const Header = (props) => {
           <a href="#/signin">SignIn</a>
         </div>
       </header>
-      <h1>this is my header </h1>
     </>
   );
 };
