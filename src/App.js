@@ -22,15 +22,18 @@ function App() {
         )
       );
     } else {
-      // product is not in cart yet so add it
+      // product is not in cart yet so add it spread operator array concatination
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
   };
   return (
     <div className="App">
       <Header></Header>
       <div className="row">
-        <Main products={products} />
-        <Basket cartItems={cartItems} />
+        {/* pass onAdd function to basket  */}
+        <Main onAdd={onAdd} products={products} />
+        {/* pass onAdd function to the basket */}
+        <Basket onAdd={onAdd} cartItems={cartItems} />
       </div>
     </div>
   );

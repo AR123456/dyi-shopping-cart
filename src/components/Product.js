@@ -2,7 +2,8 @@ import React from "react";
 
 const Product = (props) => {
   // get product from props
-  const { product } = props;
+  // get onAdd from parent which is main.js
+  const { product, onAdd } = props;
 
   return (
     <>
@@ -10,7 +11,7 @@ const Product = (props) => {
       <h3>{product.name}</h3>
       <div> ${product.price} </div>
       <div>
-        <button>Add to cart </button>
+        <button onClick={onAdd}>Add to cart </button>
       </div>
     </>
   );
