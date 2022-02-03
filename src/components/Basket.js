@@ -1,19 +1,17 @@
 import React from "react";
 
 const Basket = (props) => {
+  // get cartItems from props (useState)
+  const { cartItems } = props;
+
   return (
     <>
       <aside className="block col-1">
-        <h2>Cart stuff</h2>
+        <h2>Shopping Cart</h2>
         <div>
-          <div className="row">
-            <div className="col-2"></div>
-            <div className="col-2">
-              <button className="remove">-</button>
-              <button className="add">+</button>
-            </div>
-            <div className="col-2 text-right">x $</div>
-          </div>
+          {/* if the cart is empty  */}
+          {cartItems.length === 0 && <div>Cart is empty</div>}
+          {/* else do this  */}
         </div>
       </aside>
     </>

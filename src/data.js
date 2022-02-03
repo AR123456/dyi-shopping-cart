@@ -2,7 +2,7 @@ const data = {
   products: [
     {
       id: "1",
-      name: "Crafts",
+      name: "Lap Top",
       price: 1400,
       image: "https://picsum.photos/id/180/2400/1600",
     },
@@ -10,13 +10,13 @@ const data = {
       id: "2",
       name: "Book",
       price: 2400,
-      image: "https://picsum.photos/id/111/4400/2656",
+      image: "https://picsum.photos/id/110/4400/2656",
     },
     {
       id: "3",
-      name: "Milk",
+      name: "Forks",
       price: 1000,
-      image: "https://picsum.photos/id/21/3008/2008",
+      image: "https://picsum.photos/id/23/3008/2008",
     },
   ],
 };

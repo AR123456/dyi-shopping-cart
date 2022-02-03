@@ -1,6 +1,7 @@
 import React from "react";
 
 const Product = (props) => {
+  // get product from props
   const { product } = props;
 
   return (
