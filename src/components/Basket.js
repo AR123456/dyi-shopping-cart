@@ -48,22 +48,24 @@ const Basket = (props) => {
               <hr></hr>
               <div className="row">
                 <div className="col-2">Items Price</div>
-                <div className="col-1 text-right">price</div>
+                <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
               </div>
               <div className="row">
                 <div className="col-2">Tax </div>
-                <div className="col-1 text-right">tax</div>
+                <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
               </div>
               <div className="row">
                 <div className="col-2">Shipping</div>
-                <div className="col-1 text-right">shipping</div>
+                <div className="col-1 text-right">
+                  ${shippingPrice.toFixed(2)}
+                </div>
               </div>
 
               <div className="row">
                 <div className="col-2">
                   <strong>Total price</strong>
                 </div>
-                <div className="col-1 text-right">total price</div>
+                <div className="col-1 text-right">${totalPrice.toFixed(2)}</div>
               </div>
               <hr />
               <div className="row">
