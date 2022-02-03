@@ -3,7 +3,7 @@ import React from "react";
 const Basket = (props) => {
   // get cartItems from props (useState)
   // get onAdd that was defined in app.js
-  const { cartItems, onAdd } = props;
+  const { cartItems, onAdd, onRemove } = props;
 
   return (
     <>
@@ -26,9 +26,11 @@ const Basket = (props) => {
                 <button onClick={() => onAdd(item)} className="add">
                   +
                 </button>
-                buttons to add or remove
               </div>
-              <div className="col-2 text-right">quantity and price</div>
+              {/* div to show quantity and price - to 2 decimal places  */}
+              <div className="col-2 text-right">
+                {item.qty}x ${item.price.toFixed(2)}
+              </div>
             </div>
           ))}
         </div>

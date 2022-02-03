@@ -3,7 +3,7 @@ import React from "react";
 const Product = (props) => {
   // get product from props
   // get onAdd from parent which is main.js
-  const { product, onAdd } = props;
+  const { product, onAdd, onRemove } = props;
 
   return (
     <>
@@ -11,7 +11,8 @@ const Product = (props) => {
       <h3>{product.name}</h3>
       <div> ${product.price} </div>
       <div>
-        <button onClick={onAdd}>Add to cart </button>
+        {/* implement adding here too  */}
+        <button onClick={() => onAdd(product)}>Add to cart </button>
       </div>
     </>
   );

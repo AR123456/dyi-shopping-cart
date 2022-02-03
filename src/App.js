@@ -26,14 +26,27 @@ function App() {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
   };
+  const onRemove = (product) => {
+    //
+    const exists = cartItems.find((x) => x.id === product.id);
+    if (exists.qty === 1) {
+      //
+      setCartItems(cartItems.filter((x) => x.id !== product.id));
+    } else {
+      //
+      setCartItems.map((x) =>
+        x.id === product.id ? { ...exists, qty: exists.qty - 1 } : x
+      );
+    }
+  };
   return (
     <div className="App">
       <Header></Header>
       <div className="row">
         {/* pass onAdd function to basket  */}
-        <Main onAdd={onAdd} products={products} />
+        <Main onAdd={onAdd} onRemove={onRemove} products={products} />
         {/* pass onAdd function to the basket */}
-        <Basket onAdd={onAdd} cartItems={cartItems} />
+        <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
       </div>
     </div>
   );
