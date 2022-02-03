@@ -27,15 +27,17 @@ function App() {
     }
   };
   const onRemove = (product) => {
-    //
+    //get product from cart items using find, look for matching id
     const exists = cartItems.find((x) => x.id === product.id);
     if (exists.qty === 1) {
-      //
+      //there is one in cart so remove it using filter method
       setCartItems(cartItems.filter((x) => x.id !== product.id));
     } else {
-      //
-      setCartItems.map((x) =>
-        x.id === product.id ? { ...exists, qty: exists.qty - 1 } : x
+      // the quantity is more than one so decrease  the amount by one
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exists, qty: exists.qty - 1 } : x
+        )
       );
     }
   };
@@ -43,9 +45,9 @@ function App() {
     <div className="App">
       <Header></Header>
       <div className="row">
-        {/* pass onAdd function to basket  */}
+        {/* pass onAdd and onRemove functions to basket  */}
         <Main onAdd={onAdd} onRemove={onRemove} products={products} />
-        {/* pass onAdd function to the basket */}
+        {/* pass onAdd and on Remove functions to the basket */}
         <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
       </div>
     </div>

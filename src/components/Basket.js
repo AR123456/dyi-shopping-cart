@@ -4,6 +4,15 @@ const Basket = (props) => {
   // get cartItems from props (useState)
   // get onAdd that was defined in app.js
   const { cartItems, onAdd, onRemove } = props;
+  // order summary items
+  // using reduce here
+  const itemsPrice = cartItems.reduce((a, c) => c.qty * c.price, 0);
+  //
+  const taxPrice = itemsPrice * 0.14;
+  //
+  const shippingPrice = itemsPrice > 2000 ? 0 : 20;
+  //
+  const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
   return (
     <>
@@ -33,6 +42,35 @@ const Basket = (props) => {
               </div>
             </div>
           ))}
+          {/* stuff for cart summary  */}
+          {cartItems.length !== 0 && (
+            <>
+              <hr></hr>
+              <div className="row">
+                <div className="col-2">Items Price</div>
+                <div className="col-1 text-right">price</div>
+              </div>
+              <div className="row">
+                <div className="col-2">Tax </div>
+                <div className="col-1 text-right">tax</div>
+              </div>
+              <div className="row">
+                <div className="col-2">Shipping</div>
+                <div className="col-1 text-right">shipping</div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                  <strong>Total price</strong>
+                </div>
+                <div className="col-1 text-right">total price</div>
+              </div>
+              <hr />
+              <div className="row">
+                <button>Check out</button>
+              </div>
+            </>
+          )}
         </div>
       </aside>
     </>
