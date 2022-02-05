@@ -1,6 +1,6 @@
-import React from "react";
-import { createContext } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import faker from "faker";
+import { cartReducer } from "./Reducers";
 const Cart = createContext();
 // context will wrap create react app
 // children are coming from index.js
@@ -15,8 +15,20 @@ const Context = ({ children }) => {
     fastDelivery: faker.datatype.boolean(),
     ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
   }));
-  console.log(products);
-  return <Cart.Provider>{children}</Cart.Provider>;
+  // userReducer hook - the reducer is a switch case
+  // const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, {
+    products: products,
+    // initally the cart will be empty
+    cart: [],
+  });
+  //   console.log(products);
+  //   pass products into the provider using the value prop
+  return <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>;
 };
 
+// export CartState it is going to the home page
+export const CartState = () => {
+  return useContext(Cart);
+};
 export default Context;
