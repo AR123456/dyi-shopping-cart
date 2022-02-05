@@ -21,7 +21,7 @@ const Header = () => {
         <Container>
           <Navbar.Brand href="#home">
             {" "}
-            <a href="#">Shopping Cart</a>
+            <a href="/">Shopping Cart</a>
           </Navbar.Brand>
           <Navbar.Text className="search ">
             {/* input tag for reactstrap */}
@@ -50,4 +50,3 @@ const Header = () => {
 };
 
 export default Header;
-// https://www.youtube.com/watch?v=HptuMAUaNGk
