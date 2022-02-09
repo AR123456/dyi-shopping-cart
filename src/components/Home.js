@@ -1,7 +1,8 @@
 import React from "react";
 import { CartState } from "../context/Context";
+import Filters from "./Filters";
 import SingleProduct from "./SingleProduct";
-
+import "./styles.css";
 const Home = () => {
   // getting products from context
   const {
@@ -10,7 +11,7 @@ const Home = () => {
   console.log(products);
   return (
     <div className="home">
-      {/* Fliters will go here */}
+      <Filters></Filters>
       {/* map through products  */}
       <div className="productContainer">
         {products.map((prod) => {
