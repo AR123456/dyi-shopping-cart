@@ -1,6 +1,6 @@
 import React from "react";
-
-const Rating = () => {
+// getting state from parent component
+const Rating = ({ rating, onClick, style }) => {
   return <div>Rating</div>;
 };
 

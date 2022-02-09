@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import Rating from "./Rating";
 
 const Filters = () => {
+  const [rate, setRate] = useState(3);
   return (
     <div className="filters">
       <span className="title">Filter Products</span>
@@ -33,7 +35,7 @@ const Filters = () => {
           label="Include Out of Stock"
           name="group1"
           type="checkbox"
-          id={`inline-1`}
+          id={`inline-3`}
           onChange={() => {}}
           //   checked ={}
         ></Form.Check>
@@ -51,7 +53,7 @@ const Filters = () => {
       </span>
       <span>
         <label style={{ paddingRight: 10 }}>Rating:</label>
-        {/* rating */}
+        <Rating rating={rate}></Rating>
       </span>
       <Button variant="light" onClick={() => {}}>
         Clear Filters
