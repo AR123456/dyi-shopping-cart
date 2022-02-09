@@ -1,5 +1,6 @@
 import React from "react";
 import { CartState } from "../context/Context";
+import SingleProduct from "./SingleProduct";
 
 const Home = () => {
   // getting products from context
@@ -10,7 +11,12 @@ const Home = () => {
   return (
     <div className="home">
       {/* Fliters will go here */}
-      Home
+      {/* map through products  */}
+      <div className="productContainer">
+        {products.map((prod) => {
+          return <SingleProduct prod={prod} key={prod.id}></SingleProduct>;
+        })}
+      </div>
     </div>
   );
 };
