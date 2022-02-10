@@ -2,6 +2,8 @@ import React, { createContext, useContext, useReducer } from "react";
 import faker from "faker";
 import { cartReducer } from "./Reducers";
 const Cart = createContext();
+// this so faker only renders one time
+faker.seed(99);
 // context will wrap create react app
 // children are coming from index.js
 const Context = ({ children }) => {
