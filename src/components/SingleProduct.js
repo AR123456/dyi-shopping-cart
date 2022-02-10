@@ -1,8 +1,14 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { CartState } from "../context/Context";
 import Rating from "./Rating";
 // get prod it is in home.js where we are mapping
 const SingleProduct = ({ prod }) => {
+  // dispatch to manipulate state, getting from context
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
   return (
     <div className="products">
       <Card>
@@ -19,12 +25,19 @@ const SingleProduct = ({ prod }) => {
             )}
             <Rating rating={prod.ratings} />
           </Card.Subtitle>
+          {/* check cart state to see if product in card is prod.id  */}
+          {cart.some((p) => p.id === prod.id) ? (
+            // remove from cart
+            <Button variant="danger">Remove from cart</Button>
+          ) : (
+            //  add to cart
+            <Button disabled={!prod.inStock}>
+              {!prod.inStock ? "Out of Stock" : "Add to Cart"}
+            </Button>
+          )}
+
           {/* button to add/remove from cart  */}
           {/* check if instock, if not disable   */}
-          <Button disabled={!prod.inStock}>
-            {!prod.inStock ? "Out of Stock" : "Add to Cart"}
-          </Button>
-          <Button variant="danger">Remove from cart</Button>
         </Card.Body>
       </Card>
     </div>
