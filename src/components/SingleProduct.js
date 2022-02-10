@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import Rating from "./Rating";
 // get prod it is in home.js where we are mapping
 const SingleProduct = ({ prod }) => {
@@ -10,7 +10,6 @@ const SingleProduct = ({ prod }) => {
         <Card.Body>
           <Card.Title>{prod.name}</Card.Title>
           <Card.Subtitle style={{ paddingBottom: 10 }}>
-            {/*format price  */}
             <span>${prod.price}</span>
             {/* if fast delivery show that , if not show 4 day  */}
             {prod.fastDelivery ? (
@@ -20,6 +19,12 @@ const SingleProduct = ({ prod }) => {
             )}
             <Rating rating={prod.ratings} />
           </Card.Subtitle>
+          {/* button to add/remove from cart  */}
+          {/* check if instock, if not disable   */}
+          <Button disabled={!prod.inStock}>
+            {!prod.inStock ? "Out of Stock" : "Add to Cart"}
+          </Button>
+          <Button variant="danger">Remove from cart</Button>
         </Card.Body>
       </Card>
     </div>
