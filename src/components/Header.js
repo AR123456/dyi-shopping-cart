@@ -19,7 +19,8 @@ const Header = () => {
         style={{ height: 80, color: "white" }}
       >
         <Container>
-          <Navbar.Brand href="#home">
+          {/* <Navbar.Brand href="#home"> */}
+          <Navbar.Brand>
             {" "}
             <a href="/">Shopping Cart</a>
           </Navbar.Brand>
