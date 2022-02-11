@@ -6,9 +6,11 @@ import {
   Nav,
   Dropdown,
   Badge,
+  Button,
 } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { CartState } from "../context/Context";
 
 const Header = () => {
@@ -75,6 +77,12 @@ const Header = () => {
                         />
                       </span>
                     ))}
+                    {/* link out to the cart page  */}
+                    <Link to="/cart">
+                      <Button style={{ width: "95%", margin: "0 10px" }}>
+                        Go To Cart
+                      </Button>
+                    </Link>
                   </>
                 ) : (
                   <span style={{ padding: 10 }}>Cart is empty</span>
