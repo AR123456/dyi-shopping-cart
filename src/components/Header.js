@@ -8,8 +8,13 @@ import {
   Badge,
 } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
+import { CartState } from "../context/Context";
 
 const Header = () => {
+  // showing items in the cart icon in the header
+  const {
+    state: { cart },
+  } = CartState();
   return (
     <div>
       <Navbar
@@ -37,7 +42,7 @@ const Header = () => {
             <Dropdown alignRight>
               <Dropdown.Toggle variant="success">
                 <FaShoppingCart color="white" fontSize="25px" />
-                <Badge>{10}</Badge>
+                <Badge>{cart.length}</Badge>
               </Dropdown.Toggle>
               <Dropdown.Menu style={{ minWidth: 370 }}>
                 <span style={{ padding: 10 }}>Cart is empty</span>
