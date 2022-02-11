@@ -28,10 +28,30 @@ const SingleProduct = ({ prod }) => {
           {/* check cart state to see if product in card is prod.id  */}
           {cart.some((p) => p.id === prod.id) ? (
             // remove from cart
-            <Button variant="danger">Remove from cart</Button>
+            <Button
+              onClick={() => {
+                dispatch({
+                  type: "REMOVE_FROM_CART",
+                  payload: prod,
+                });
+              }}
+              variant="danger"
+            >
+              Remove from cart
+            </Button>
           ) : (
             //  add to cart
-            <Button disabled={!prod.inStock}>
+            <Button
+              onClick={() => {
+                // kick off dispatch function
+                dispatch({
+                  // need type and payload (current product )
+                  type: "ADD_TO_CART",
+                  payload: prod,
+                });
+              }}
+              disabled={!prod.inStock}
+            >
               {!prod.inStock ? "Out of Stock" : "Add to Cart"}
             </Button>
           )}
