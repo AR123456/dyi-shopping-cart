@@ -7,6 +7,7 @@ import {
   Dropdown,
   Badge,
 } from "react-bootstrap";
+import { AiFillDelete } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartState } from "../context/Context";
 
@@ -14,6 +15,8 @@ const Header = () => {
   // showing items in the cart icon in the header
   const {
     state: { cart },
+    // need dispatch fro removing from cart
+    dispatch,
   } = CartState();
   return (
     <div>
@@ -45,7 +48,37 @@ const Header = () => {
                 <Badge>{cart.length}</Badge>
               </Dropdown.Toggle>
               <Dropdown.Menu style={{ minWidth: 370 }}>
-                <span style={{ padding: 10 }}>Cart is empty</span>
+                {/* if has stuff in it do not show its empty  */}
+                {cart.length > 0 ? (
+                  <>
+                    {/* map the cart  */}
+                    {cart.map((prod) => (
+                      <span className="cartitem" key={prod.id}>
+                        <img
+                          src={prod.image}
+                          className="cartItemImg"
+                          alt={prod.name}
+                        ></img>
+                        <div className="cartItemDetail">
+                          <span>{prod.name}</span>
+                          <span>${prod.price}</span>
+                        </div>
+                        <AiFillDelete
+                          fontSize="20px"
+                          style={{ cursor: "pointer" }}
+                          onClick={() =>
+                            dispatch({
+                              type: "REMOVE_FROM_CART",
+                              payload: prod,
+                            })
+                          }
+                        />
+                      </span>
+                    ))}
+                  </>
+                ) : (
+                  <span style={{ padding: 10 }}>Cart is empty</span>
+                )}
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
