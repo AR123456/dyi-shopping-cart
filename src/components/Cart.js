@@ -3,6 +3,7 @@ import Rating from "../components/Rating.js";
 import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 // get cart state from context
 import { CartState } from "../context/Context";
+import { AiFillDelete } from "react-icons/ai";
 
 const Cart = () => {
   const {
@@ -48,6 +49,20 @@ const Cart = () => {
                       <option key={x + 1}>{x + 1}</option>
                     ))}
                   </Form.Control>
+                </Col>
+                <Col md={2}>
+                  <Button
+                    type="button"
+                    variant="light"
+                    onClick={() =>
+                      dispatch({
+                        type: "REMOVE_FROM_CART",
+                        payload: prod,
+                      })
+                    }
+                  >
+                    <AiFillDelete fontSize="20px"></AiFillDelete>
+                  </Button>
                 </Col>
               </Row>
             </ListGroup.Item>
