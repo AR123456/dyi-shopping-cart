@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { CartState } from "../context/Context";
 import Rating from "./Rating";
 
 const Filters = () => {
-  const [rate, setRate] = useState(2);
+  // importing the needed state to implement the filters from cart state
+  const {
+    productState: { byStock, byFastDelivery, sort, byRating },
+    productDispatch,
+  } = CartState();
+  // console.log(productState);
+  // https://www.youtube.com/watch?v=HptuMAUaNGk
   return (
     <div className="filters">
       <span className="title">Filter Products</span>
@@ -55,8 +62,13 @@ const Filters = () => {
         <label style={{ paddingRight: 10 }}>Rating:</label>
         {/* sending this to Rating.js , need to get the rating (i) from the on click and set it to state*/}
         <Rating
-          rating={rate}
-          onClick={(i) => setRate(i + 1)}
+          rating={byRating}
+          onClick={(i) =>
+            productDispatch({
+              type: "FILTER_BY_RATING",
+              payload: i + 1,
+            })
+          }
           style={{ cursor: "pointer" }}
         ></Rating>
       </span>
