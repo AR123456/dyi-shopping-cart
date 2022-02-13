@@ -95,4 +95,3 @@ const Cart = () => {
 };
 
 export default Cart;
-// resume at https://www.youtube.com/watch?v=HptuMAUaNGk
