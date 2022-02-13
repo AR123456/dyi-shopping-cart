@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import faker from "faker";
-import { cartReducer } from "./Reducers";
+import { cartReducer, productReducer } from "./Reducers";
 const Cart = createContext();
 // this so faker only renders one time
 faker.seed(99);
@@ -25,8 +25,21 @@ const Context = ({ children }) => {
     cart: [],
   });
   //   console.log(products);
+  // reducer for filtering, getting productReducer from reducer.js
+  const [productState, productDispatch] = useReducer(productReducer, {
+    //set initial state of the filter items
+    byStock: false,
+    fastDelivery: false,
+    byRating: 0,
+    searchQuery: "",
+  });
+
   //   pass products into the provider using the value prop
-  return <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>;
+  return (
+    <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>
+      {children}
+    </Cart.Provider>
+  );
 };
 
 // export CartState it is going to the home page

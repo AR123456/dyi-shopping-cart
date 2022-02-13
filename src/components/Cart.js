@@ -25,7 +25,7 @@ const Cart = () => {
     <div className="home">
       {/* render to products page  */}
       <div className="productContainer">
-        {/* react bootsrap list group */}
+        {/* react bootstrap list group */}
         <ListGroup>
           {/* map the cart  */}
           {cart.map((prod) => (

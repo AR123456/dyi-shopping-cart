@@ -30,3 +30,15 @@ export const cartReducer = (state, action) => {
       return state;
   }
 };
+export const productReducer = (state, action) => {
+  switch (action.type) {
+    case "SORT_BY_PRICE":
+      return { ...state, sort: action.payload };
+    case "FILTER_BY_STOCK":
+      // invert the value
+      return { ...state, byStock: !state.byStock };
+
+    default:
+      return state;
+  }
+};
