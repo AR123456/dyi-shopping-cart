@@ -19,6 +19,7 @@ const Header = () => {
     state: { cart },
     // need dispatch fro removing from cart
     dispatch,
+    productDispatch,
   } = CartState();
   return (
     <div>
@@ -40,6 +41,14 @@ const Header = () => {
               style={{ width: 500 }}
               placeholder="Search"
               className="m-auto"
+              // adding on change to use dispatcher with filters js
+              onChange={(e) => {
+                productDispatch({
+                  type: "FILTER_BY_SEARCH",
+                  // this is the search query
+                  payload: e.target.value,
+                });
+              }}
             />
           </Navbar.Text>
           {/* cart icon  */}
