@@ -26,21 +26,14 @@ const Context = ({ children }) => {
   });
   //   console.log(products);
   // reducer for filtering, getting productReducer from reducer.js
-  // const [productState, productDispatch] = useReducer(productReducer, {
-  //   //set initial state of the filter items
-  //   byStock: false,
-  //   fastDelivery: false,
-  //   byRating: 0,
-  //   searchQuery: "",
-  // });
   const [productState, productDispatch] = useReducer(productReducer, {
+    //set initial state of the filter items
     byStock: false,
-    byFastDelivery: false,
+    fastDelivery: false,
     byRating: 0,
     searchQuery: "",
   });
 
-  console.log(productState);
   //   pass products into the provider using the value prop
   return (
     <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>
