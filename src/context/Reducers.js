@@ -30,31 +30,49 @@ export const cartReducer = (state, action) => {
       return state;
   }
 };
+// export const productReducer = (state, action) => {
+//   switch (action.type) {
+//     case "SORT_BY_PRICE":
+//       return { ...state, sort: action.payload };
+//     case "FILTER_BY_STOCK":
+//       // invert the value
+//       return { ...state, byStock: !state.byStock };
+//     case "FILTER_BY_DELIVERY":
+//       // invert fastDelivery this is coming from context
+//       return { ...state, byFastDelivery: !state.byFastDelivery };
+//     case "FILTER_BY_RATING":
+//       // this is being set by app,, rating.js so is payload
+//       return { ...state, byRating: action.payload };
+//     case "FILTER_BY_SEARCH":
+//       // this is also coming from app in action.payload
+//       return { ...state, searchQuery: action.payload };
+//     case "CLEAR_FILTERS":
+//       // set filters back to what is initially passed from state in context.js useReducer hook
+//       return {
+//         byStock: false,
+//         byFastDelivery: false,
+//         byRating: 0,
+//         searchQuery: "",
+//       };
+
+//     default:
+//       return state;
+//   }
+// };
 export const productReducer = (state, action) => {
   switch (action.type) {
     case "SORT_BY_PRICE":
       return { ...state, sort: action.payload };
     case "FILTER_BY_STOCK":
-      // invert the value
       return { ...state, byStock: !state.byStock };
     case "FILTER_BY_DELIVERY":
-      // invert fastDelivery this is coming from context
       return { ...state, byFastDelivery: !state.byFastDelivery };
     case "FILTER_BY_RATING":
-      // this is being set by app,, rating.js so is payload
       return { ...state, byRating: action.payload };
     case "FILTER_BY_SEARCH":
-      // this is also coming from app in action.payload
       return { ...state, searchQuery: action.payload };
     case "CLEAR_FILTERS":
-      // set filters back to what is initially passed from state in context.js useReducer hook
-      return {
-        byStock: false,
-        byFastDelivery: false,
-        byRating: 0,
-        searchQuery: "",
-      };
-
+      return { byStock: false, byFastDelivery: false, byRating: 0 };
     default:
       return state;
   }
