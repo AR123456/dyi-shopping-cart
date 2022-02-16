@@ -17,6 +17,25 @@ const Home = () => {
         sort === "lowToHigh" ? a.price - b.price : b.price - a.price
       );
     }
+    // if false filter it out only display when checked
+    if (!byStock) {
+      sortedProducts = sortedProducts.filter((prod) => prod.inStock);
+    }
+    // if fast true
+    if (byFastDelivery) {
+      sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery);
+    }
+    // check the rating value and show = or > than
+    if (byRating) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.ratings >= byRating
+      );
+    }
+    if (searchQuery) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.name.toLowerCase().includes(searchQuery)
+      );
+    }
     return sortedProducts;
   };
   return (
@@ -32,4 +51,3 @@ const Home = () => {
 };
 
 export default Home;
-// 25:20 things broke
