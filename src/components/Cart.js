@@ -32,7 +32,7 @@ const Cart = () => {
             <ListGroup.Item key={prod.id}>
               <Row>
                 <Col md={2}>
-                  <Image src={prod.image} alt={prod.name} fluid rouned></Image>
+                  <Image src={prod.image} alt={prod.name} fluid rounded></Image>
                 </Col>
                 <Col md={2}>
                   <span>{prod.name}</span>

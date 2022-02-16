@@ -29,7 +29,7 @@ const Context = ({ children }) => {
   const [productState, productDispatch] = useReducer(productReducer, {
     //set initial state of the filter items
     byStock: false,
-    fastDelivery: false,
+    byFastDelivery: false,
     byRating: 0,
     searchQuery: "",
   });
