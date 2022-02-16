@@ -7,16 +7,25 @@ const Home = () => {
   // getting products from context
   const {
     state: { products },
+    productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
   } = CartState();
   // console.log(products);
+  const transformProducts = () => {
+    let sortedProducts = products;
+    if (sort) {
+      sortedProducts = sortedProducts.sort((a, b) =>
+        sort === "lowToHigh" ? a.price - b.price : b.price - a.price
+      );
+    }
+    return sortedProducts;
+  };
   return (
     <div className="home">
-      <Filters></Filters>
-      {/* map through products  */}
+      <Filters />
       <div className="productContainer">
-        {products.map((prod) => {
-          return <SingleProduct prod={prod} key={prod.id}></SingleProduct>;
-        })}
+        {transformProducts().map((prod) => (
+          <SingleProduct prod={prod} key={prod.id} />
+        ))}
       </div>
     </div>
   );
