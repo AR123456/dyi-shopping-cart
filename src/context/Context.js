@@ -17,6 +17,7 @@ const Context = ({ children }) => {
     fastDelivery: faker.datatype.boolean(),
     ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
   }));
+  console.log(products);
   // userReducer hook - the reducer is a switch case
   // const [state, dispatch] = useReducer(reducer, initialState);
   const [state, dispatch] = useReducer(cartReducer, {
@@ -33,7 +34,7 @@ const Context = ({ children }) => {
     byRating: 0,
     searchQuery: "",
   });
-
+  // console.log(productState);
   //   pass products into the provider using the value prop
   return (
     <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>
