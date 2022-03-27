@@ -171,4 +171,3 @@ const products = [
     ratings: 5,
   },
 ];
-export default products;

@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useReducer } from "react";
 import faker from "faker";
 import { cartReducer, productReducer } from "./Reducers";
+// import products from "../products";
+// console.log(products);
 const Cart = createContext();
 // this so faker only renders one time
 faker.seed(99);
