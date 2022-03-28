@@ -16,14 +16,14 @@ export const cartReducer = (state, action) => {
       // filter out if action.payload is not add to cart
       return {
         ...state,
-        cart: state.cart.filter((c) => c.id !== action.payload.id),
+        cart: state.cart.filter((c) => c._id !== action.payload._id),
       };
     case "CHANGE_CART_QTY":
       // if it is in the cart change the quantity
       return {
         ...state,
         cart: state.cart.filter((c) =>
-          c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
+          c._id === action.payload._id ? (c.qty = action.payload.qty) : c.qty
         ),
       };
     default:

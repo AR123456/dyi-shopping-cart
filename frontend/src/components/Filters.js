@@ -19,7 +19,7 @@ const Filters = () => {
           label="Ascending"
           name="group1"
           type="radio"
-          id={`inline-1`}
+          _id={`inline-1`}
           onChange={() =>
             productDispatch({
               type: "SORT_BY_PRICE",
@@ -35,7 +35,7 @@ const Filters = () => {
           label="Descending"
           name="group1"
           type="radio"
-          id={`inline-2`}
+          _id={`inline-2`}
           onChange={() =>
             productDispatch({
               type: "SORT_BY_PRICE",
@@ -66,7 +66,7 @@ const Filters = () => {
           label="Fast Delivery Only"
           name="group1"
           type="checkbox"
-          id={`inline-4`}
+          _id={`inline-4`}
           onChange={() =>
             productDispatch({
               type: "FILTER_BY_DELIVERY",

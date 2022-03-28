@@ -1,7 +1,7 @@
 const products = [
   {
     fastDelivery: true,
-    id: "ab7ddb0b-c39f-4490-8fd0-6c4ba6775e96",
+    _id: "ab7ddb0b-c39f-4490-8fd0-6c4ba6775e96",
     image: "http://placeimg.com/640/480/people",
     inStock: 0,
     name: "Fantastic Frozen Gloves",
@@ -10,7 +10,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "5368b4bd-4de3-46a9-9069-142138711c35",
+    _id: "5368b4bd-4de3-46a9-9069-142138711c35",
     image: "http://placeimg.com/640/480/fashion",
     inStock: 0,
     name: "Small Wooden Salad",
@@ -19,7 +19,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "21864a4f-fb2a-4c3b-8929-41bdfe0c5e0b",
+    _id: "21864a4f-fb2a-4c3b-8929-41bdfe0c5e0b",
     image: "http://placeimg.com/640/480/sports",
     inStock: 0,
     name: "Refined Metal Chicken",
@@ -28,7 +28,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "21798186-bcdb-4361-b973-8d379b4571c4",
+    _id: "21798186-bcdb-4361-b973-8d379b4571c4",
     image: "http://placeimg.com/640/480/nature",
     inStock: 5,
     name: "Refined Wooden Soap",
@@ -37,7 +37,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "2b5a4c3c-b804-48fc-9766-2f89ce78605f",
+    _id: "2b5a4c3c-b804-48fc-9766-2f89ce78605f",
     image: "http://placeimg.com/640/480/nature",
     inStock: 0,
     name: "Ergonomic Metal Fish",
@@ -46,7 +46,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "ec283bdd-ac81-4c2c-88db-330b76599949",
+    _id: "ec283bdd-ac81-4c2c-88db-330b76599949",
     image: "http://placeimg.com/640/480/transport",
     inStock: 3,
     name: "Awesome Metal Chips",
@@ -55,7 +55,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "af8aa25a-5dbe-4930-b13b-2fa60cc42717",
+    _id: "af8aa25a-5dbe-4930-b13b-2fa60cc42717",
     image: "http://placeimg.com/640/480/nature",
     inStock: 7,
     name: "Licensed Soft Chips",
@@ -64,7 +64,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "ec635eb6-a3ad-4b1b-9311-187f6b624149",
+    _id: "ec635eb6-a3ad-4b1b-9311-187f6b624149",
     image: "http://placeimg.com/640/480/nature",
     inStock: 3,
     name: "Ergonomic Rubber Chair",
@@ -73,7 +73,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "fbd232e7-740e-423a-a2d7-08ae09ea1220",
+    _id: "fbd232e7-740e-423a-a2d7-08ae09ea1220",
     image: "http://placeimg.com/640/480/food",
     inStock: 0,
     name: "Generic Steel Pizza",
@@ -82,7 +82,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "d9817943-5b51-49bc-9bca-0e4dce90d6b9",
+    _id: "d9817943-5b51-49bc-9bca-0e4dce90d6b9",
     image: "http://placeimg.com/640/480/cats",
     inStock: 7,
     name: "Ergonomic Granite Pants",
@@ -91,7 +91,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "f51fc6c6-fd20-4412-a8ff-176ceb690260",
+    _id: "f51fc6c6-fd20-4412-a8ff-176ceb690260",
     image: "http://placeimg.com/640/480/nightlife",
     inStock: 0,
     name: "Ergonomic Frozen Soap",
@@ -100,7 +100,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "dae87176-e9ed-4d7a-88ef-e434f1d6f8d1",
+    _id: "dae87176-e9ed-4d7a-88ef-e434f1d6f8d1",
     image: "http://placeimg.com/640/480/city",
     inStock: 7,
     name: "Handcrafted Plastic Pizza",
@@ -118,7 +118,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "172b7b04-6e9e-4c0c-9f38-6d1b5c84796c",
+    _id: "172b7b04-6e9e-4c0c-9f38-6d1b5c84796c",
     image: "http://placeimg.com/640/480/abstract",
     inStock: 5,
     name: "Refined Granite Bike",
@@ -127,7 +127,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "81d40987-4b66-4fc7-90ff-4ddd683bf464",
+    _id: "81d40987-4b66-4fc7-90ff-4ddd683bf464",
     image: "http://placeimg.com/640/480/transport",
     inStock: 3,
     name: "Handmade Frozen Keyboard",
@@ -136,7 +136,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "e00e5e78-b7b6-4471-9110-4cd2dd4422b7",
+    _id: "e00e5e78-b7b6-4471-9110-4cd2dd4422b7",
     image: "http://placeimg.com/640/480/food",
     inStock: 5,
     name: "Unbranded Soft Salad",
@@ -145,7 +145,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "56ff9c46-2b26-46c8-8062-9725bda9f1be",
+    _id: "56ff9c46-2b26-46c8-8062-9725bda9f1be",
     image: "http://placeimg.com/640/480/people",
     inStock: 0,
     name: "Generic Wooden Soap",
@@ -154,7 +154,7 @@ const products = [
   },
   {
     fastDelivery: false,
-    id: "10ef5502-3e8b-4888-b920-6f5602e30b35",
+    _id: "10ef5502-3e8b-4888-b920-6f5602e30b35",
     image: "http://placeimg.com/640/480/business",
     inStock: 5,
     name: "Handmade Rubber Keyboard",
@@ -163,7 +163,7 @@ const products = [
   },
   {
     fastDelivery: true,
-    id: "344bcb96-066a-4fa1-96f0-4f5c5c9e4891",
+    _id: "344bcb96-066a-4fa1-96f0-4f5c5c9e4891",
     image: "http://placeimg.com/640/480/sports",
     inStock: 0,
     name: "Awesome Soft Mouse",
@@ -171,3 +171,4 @@ const products = [
     ratings: 5,
   },
 ];
+export default products;

@@ -29,7 +29,7 @@ const Cart = () => {
         <ListGroup>
           {/* map the cart  */}
           {cart.map((prod) => (
-            <ListGroup.Item key={prod.id}>
+            <ListGroup.Item key={prod._id}>
               <Row>
                 <Col md={2}>
                   <Image src={prod.image} alt={prod.name} fluid rounded></Image>
@@ -52,7 +52,7 @@ const Cart = () => {
                       dispatch({
                         type: "CHANGE_CART_QTY",
                         payload: {
-                          id: prod.id,
+                          _id: prod._id,
                           qty: e.target.value,
                         },
                       })

@@ -64,7 +64,7 @@ const Header = () => {
                   <>
                     {/* map the cart  */}
                     {cart.map((prod) => (
-                      <span className="cartitem" key={prod.id}>
+                      <span className="cartitem" key={prod._id}>
                         <img
                           src={prod.image}
                           className="cartItemImg"

@@ -27,7 +27,7 @@ const SingleProduct = ({ prod }) => {
             <Rating rating={prod.ratings} />
           </Card.Subtitle>
           {/* check cart state to see if product in card is prod.id  */}
-          {cart.some((p) => p.id === prod.id) ? (
+          {cart.some((p) => p._id === prod._id) ? (
             // remove from cart
             <Button
               onClick={() => {
